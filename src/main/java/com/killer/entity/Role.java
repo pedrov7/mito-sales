@@ -2,8 +2,6 @@ package com.killer.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,25 +9,20 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Category {
-	
+public class Role {
+
+	//↓↓↓ por el momento rol no va a autogenerar el ID
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
-	private Integer idCategory;
+	private Integer idRole;
 	
-	@Column(name = "name", nullable = false, length = 50)
+	@Column(nullable = false, length = 20	)
 	private String name;
-	
-	@Column(nullable = false, length = 50)
-	private String description;
 	
 	@Column(nullable = false)
 	private boolean enabled;
-	
-
 }

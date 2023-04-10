@@ -11,25 +11,24 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Category {
+public class Provider {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
-	private Integer idCategory;
-	
-	@Column(name = "name", nullable = false, length = 50)
-	private String name;
+	private Integer idProvider;
 	
 	@Column(nullable = false, length = 50)
-	private String description;
-	
+	private String name;
+
+	@Column(nullable = false, length = 150)
+	private String address;
+
 	@Column(nullable = false)
 	private boolean enabled;
-	
 
 }
