@@ -21,9 +21,9 @@ public class SaleDetail {
     @JoinColumn(name = "xid_sale", nullable = false, foreignKey = @ForeignKey(name = "FK_DETAIL_SALE"))
     private Sale sale;
 
-//    @ManyToOne
-//    @JoinColumn(name = "xid_product", nullable = false, foreignKey = @ForeignKey(name = "FK_DETAIL_PRODUCT"))
-//    private Product product;
+    @ManyToOne
+    @JoinColumn(name = "xid_product", nullable = false, foreignKey = @ForeignKey(name = "FK_DETAIL_PRODUCT"))
+    private Product product;
 
     @Column(nullable = false)
     private short quantity;
